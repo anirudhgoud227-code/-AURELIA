@@ -1,0 +1,201 @@
+/* Milk.css
+   Externalized styles for Milk.jsx
+   Theme classes: .theme-default and .theme-accent
+*/
+
+.milk-page {
+  font-family: "Inter","Poppins",Arial,sans-serif;
+  min-height: 60vh;
+  padding: 28px 14px;
+  color: var(--milk-text, #222);
+  background: var(--milk-page-bg, #f8f9fc);
+}
+
+/* Theme variables */
+.theme-default {
+  --milk-accent: #007bff;
+  --milk-card-bg: #ffffff;
+  --milk-page-bg: #f8f9fc;
+  --milk-btn-bg: linear-gradient(135deg,#111,#333);
+  --milk-text: #222;
+}
+
+.theme-accent {
+  --milk-accent: #ff6b6b;
+  --milk-card-bg: #fff7f7;
+  --milk-page-bg: #fff9f9;
+  --milk-btn-bg: linear-gradient(135deg,#ff6b6b,#cc5252);
+  --milk-text: #222;
+}
+
+/* Header */
+.milk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.milk-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.milk-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--milk-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.milk-brand-text .milk-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.milk-subtitle {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Controls */
+.milk-controls { display: flex; gap: 10px; align-items: center; }
+.milk-theme-toggle { display: flex; gap: 8px; align-items: center; }
+
+.milk-theme-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  font-weight: 600;
+  opacity: 0.7;
+  transition: opacity 160ms;
+}
+
+.milk-theme-btn.selected { opacity: 1; }
+.milk-theme-btn.selected.accent { color: var(--milk-accent); }
+
+/* Grid and cards */
+.milk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 6px;
+}
+
+.milk-card {
+  background: var(--milk-card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgba(11,22,39,0.06);
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.milk-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(11,22,39,0.12);
+}
+
+/* Image */
+.milk-img-wrap { width: 100%; height: 160px; overflow: hidden; flex-shrink: 0; position: relative; }
+.milk-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 350ms; }
+.milk-card:hover .milk-img { transform: scale(1.03); }
+
+/* Sold badge (if used) */
+.milk-badge {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background: #ffcc00;
+  color: #111;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Card body */
+.milk-card-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.milk-product-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+
+/* Meta row */
+.milk-meta-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.milk-meta-left { display: flex; gap: 8px; align-items: center; }
+.milk-unit { font-size: 13px; color: #888; margin-left: 4px; }
+
+/* Stars */
+.stars { display: flex; gap: 4px; align-items: center; color: #ffb400; font-weight: 700; font-size: 13px; }
+.rating-number { color: #666; font-weight: 600; margin-left: 6px; font-size: 13px; }
+
+/* Price */
+.milk-price-wrap { text-align: right; }
+.milk-price { font-weight: 800; font-size: 16px; }
+.milk-small-strike { color: #888; text-decoration: line-through; font-size: 13px; margin-left: 8px; }
+
+/* Description */
+.milk-desc { color: #666; margin-top: 8px; margin-bottom: 2px; }
+
+/* Actions */
+.milk-actions { margin-top: 8px; display: flex; justify-content: flex-end; }
+.milk-details-btn {
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 7px 10px;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Tip */
+.milk-tip { margin-top: 26px; color: #666; font-size: 13px; }
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+  .milk-header { gap: 8px; padding-bottom: 8px; }
+  .milk-logo { width: 40px; height: 40px; font-size: 16px; }
+  .milk-img-wrap { height: 140px; }
+}
+/* Add to Cart button */
+.milk-add-btn {
+  border-radius: 8px;
+  border: 1px solid var(--milk-accent);
+  padding: 7px 10px;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--milk-accent);
+  transition: 180ms ease;
+}
+
+/* Hover effect */
+.milk-add-btn:hover {
+  background: var(--milk-accent);
+  color: #fff;
+}
+
+/* Disabled (sold out) */
+.milk-add-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: transparent;
+  color: #aaa;
+  border-color: #ccc;
+}
+

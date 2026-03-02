@@ -1,0 +1,236 @@
+/* Veg.css
+   Same layout/colors/interaction as NonVeg.css but for the Veg component.
+   Theme classes on container: .light and .dark
+*/
+
+.veg-page {
+  font-family: "Inter","Poppins",Arial,sans-serif;
+  min-height: 60vh;
+  padding: 28px 14px;
+  color: var(--veg-text, #222);
+  background: var(--veg-page-bg, #f8f9fc);
+}
+
+/* Theme variants (switch by toggling .light / .dark on container) */
+.light {
+  --veg-accent: #28a745; /* green accent for veg */
+  --veg-card-bg: #ffffff;
+  --veg-page-bg: #f8f9fc;
+  --veg-btn-bg: linear-gradient(135deg,#0b5d1e,#0a4d18);
+  --veg-text: #222;
+}
+
+.dark {
+  --veg-accent: #2fb871;
+  --veg-card-bg: #0f1724;
+  --veg-page-bg: #071022;
+  --veg-btn-bg: linear-gradient(135deg,#2fb871,#1f8c57);
+  --veg-text: #e6eef3;
+}
+
+/* Header */
+.veg-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.veg-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.veg-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  background: var(--veg-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.veg-brand-text .veg-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.veg-brand-text .veg-subtitle {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Controls */
+.veg-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.veg-theme-toggle {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.veg-theme-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  font-weight: 600;
+  opacity: 0.7;
+  transition: opacity 160ms;
+}
+
+.veg-theme-btn.selected {
+  opacity: 1;
+}
+
+.veg-theme-btn.selected.accent {
+  color: var(--veg-accent);
+}
+
+/* Page size selector */
+.veg-page-size {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.small-label { font-size: 13px; color: #444; }
+
+.page-size-select {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--veg-accent);
+  background: transparent;
+  color: var(--veg-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Grid and cards */
+.veg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 6px;
+}
+
+.veg-card {
+  background: var(--veg-card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px rgba(11,22,39,0.06);
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.veg-card-hover,
+.veg-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(11,22,39,0.12);
+}
+
+/* Image */
+.veg-img-wrap { width: 100%; height: 160px; overflow: hidden; flex-shrink: 0; }
+.veg-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 350ms; }
+.veg-card:hover .veg-img { transform: scale(1.03); }
+
+/* Card body */
+.veg-card-body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.veg-product-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+
+/* Meta row */
+.veg-meta-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.veg-meta-left { display: flex; gap: 8px; align-items: center; }
+.veg-unit { font-size: 13px; color: #888; margin-left: 4px; }
+
+/* Stars */
+.veg-stars { display: flex; gap: 4px; align-items: center; color: #ffb400; font-weight: 700; font-size: 13px; }
+.rating-number { color: #666; font-weight: 600; margin-left: 6px; font-size: 13px; }
+
+/* Price */
+.veg-price-wrap { text-align: right; }
+.veg-price { font-weight: 800; font-size: 16px; }
+.veg-small-strike { color: #888; text-decoration: line-through; font-size: 13px; margin-left: 8px; }
+
+/* Description */
+.veg-desc { color: #666; margin-top: 8px; margin-bottom: 2px; }
+
+/* Actions */
+.veg-actions { margin-top: 8px; display: flex; gap: 8px; justify-content: flex-end; align-items: center; flex-wrap: wrap; }
+
+.veg-details-btn,
+.veg-add-btn {
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 7px 10px;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* special add button style using accent */
+.veg-add-btn {
+  border-color: var(--veg-accent);
+  color: var(--veg-accent);
+  background: transparent;
+}
+
+.light .veg-add-btn { color: var(--veg-accent); border-color: var(--veg-accent); }
+.dark .veg-add-btn { color: #071022; background: var(--veg-accent); border-color: var(--veg-accent); }
+
+/* Pagination */
+.veg-pagination { margin-top: 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.veg-summary { font-size: 13px; color: #444; }
+
+.veg-page-controls { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+
+.veg-page-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--veg-accent);
+  background: transparent;
+  color: var(--veg-accent);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.veg-page-btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.veg-page-btn.active {
+  background: var(--veg-accent);
+  color: #fff;
+  border-color: var(--veg-accent);
+}
+
+.veg-dots { padding: 6px 10px; }
+
+/* Tip */
+.veg-note { margin-top: 26px; color: #666; font-size: 13px; }
+
+/* Responsive tweaks */
+@media (max-width: 520px) {
+  .veg-header { gap: 8px; padding-bottom: 8px; }
+  .veg-logo { width: 40px; height: 40px; font-size: 16px; }
+  .veg-img-wrap { height: 140px; }
+}

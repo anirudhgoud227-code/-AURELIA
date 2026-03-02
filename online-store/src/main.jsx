@@ -4,13 +4,15 @@ import './index.css'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
 import store from './store.js'
-import "bootstrap/dist/css/bootstrap.min.css";
-
+import "bootstrap/dist/css/bootstrap.min.css"
+import { HashRouter } from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <HashRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </HashRouter>
   </StrictMode>,
 )

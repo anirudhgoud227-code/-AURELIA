@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./NonVeg.css"; // make sure this path matches your project structure
+import "./Nonveg.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "./store";
 

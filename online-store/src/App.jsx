@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Link, Route, Routes, Navigate } from "react-router-dom";
-import Home from "./home";
+import Home from "./Home";
 import Veg from "./veg";
 import NonVeg from "./Nonveg";
 import Milk from "./Milk";
